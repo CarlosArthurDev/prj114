@@ -1,0 +1,11 @@
+h3
+  {
+    font-size: 25px !important;
+  }
+  canvas {
+    border:2px dashed black;
+    animation-name: exemplo;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+  }
+  
