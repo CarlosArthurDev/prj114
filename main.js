@@ -1,5 +1,9 @@
-function preload(){
+var narizY=0
+var narizX=0
 
+
+function preload(){
+ bigode=loadImage("https://i.postimg.cc/ZqKtDp3H/download-removebg-preview-1.png")
 }
 function setup(){
     canvas=createCanvas(400,400);
@@ -20,8 +24,17 @@ function gotPoses(results){
         console.log(results)
         console.log("nariz x=" +results[0].pose.nose.x)
         console.log("nariz y=" +results[0].pose.nose.y)
+        narizX=results[0].pose.nose.x-20
+        narizY=results[0].pose.nose.y
+        
     }
 }
 function draw(){
     image(video,0,0,400,400);
+  
+    image(bigode,narizX, narizY,55,55)
+    
+}
+function takeSnapshot(){
+    save("bigodeAPP.png")
 }
